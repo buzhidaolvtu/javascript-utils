@@ -28,11 +28,7 @@
         return format;
     }
 
-    function retry(task, count, timeout) {
-        return _retry(task, count, timeout);
-    }
-
-    function _retry(task, count, timeout, promise) {
+    function retry(task, count, timeout, promise) {
         var result = promise || $.Deferred();
 
         var p = $.Deferred();
@@ -45,7 +41,7 @@
                 return;
             }
             setTimeout(function() {
-                _retry(task, count, timeout, result)
+                retry(task, count, timeout, result)
             }, timeout);
         });
         task.apply(p);
