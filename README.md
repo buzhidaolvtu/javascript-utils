@@ -7,7 +7,7 @@
     retry(function() {
             var deferred = this;
             console.log(new Date().format('hh-mm-ss.S'), "execute task");
-            $.get('https://pay.test.boxfish.cn/member/info?access_token=admin')
+            $.get('http://www.baidu.com')
                 .then(function() {
                     deferred.reject();
                     // deferred.resolve();
