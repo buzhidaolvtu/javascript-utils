@@ -52,11 +52,12 @@
     retry(function() {
             var deferred = this;
             console.log(new Date().format('hh-mm-ss.S'), "execute task");
-            $.get('https://pay.test.boxfish.cn/member/info?access_token=admin')
-                .then(function() {
-                    deferred.reject();
-                    // deferred.resolve();
-                })
+            var promise = $.Deferred();
+            promise.then(function() {
+                deferred.reject();
+                // deferred.resolve();
+            })
+            promise.resolve();
         }, 5, 1000)
         .done(function() {
             console.log(new Date().format('hh-mm-ss.S'), "success");
