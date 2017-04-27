@@ -7,7 +7,7 @@
     retry(function() {
             var deferred = this;
             console.log(new Date().format('hh-mm-ss.S'), "execute task");
-            $.get('http://www.baidu.com')
+            $.get('http://www.baidu.com')  //请替换成允许跨域的URL
                 .then(function() {
                     deferred.reject();
                     // deferred.resolve();
