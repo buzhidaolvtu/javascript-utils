@@ -29,3 +29,5 @@
 	=>
 	http://localhost:8080/a/b/c
 	```
+
+* CopyToClipboard(containerid)
